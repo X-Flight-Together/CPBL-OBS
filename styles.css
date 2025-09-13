@@ -122,7 +122,8 @@ body.green-bg { background: #00a000; }
 .dots { display: grid; grid-auto-flow: column; gap: 6px; }
 .dots::before, .dots::after { content: ""; }
 .dot { width: 14px; height: 14px; border-radius: 50%; background: #374151; }
-.dot.on { background: var(--yellow); }
+.dot.on { background: var(--green); }
+.count:has(#strikes) .dot.on { background: var(--yellow); }
 .outs .dot.on { background: var(--accent); }
 
 .footer { 
