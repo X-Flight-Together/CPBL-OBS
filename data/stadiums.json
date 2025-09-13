@@ -1,0 +1,23 @@
+{
+  "stadiums": [
+    { "id": "tianmu", "name": "台北市天母棒球場", "city": "台北市" },
+    { "id": "taipei", "name": "台北市立棒球場", "city": "台北市" },
+    { "id": "xinzhuang", "name": "新北市立新莊棒球場", "city": "新北市" },
+    { "id": "taoyuan", "name": "樂天桃園棒球場", "city": "桃園市" },
+    { "id": "longtan", "name": "桃園龍潭棒球場", "city": "桃園市" },
+    { "id": "hsinchu", "name": "新竹市中正棒球場", "city": "新竹市" },
+    { "id": "taichung", "name": "台中市洲際棒球場", "city": "台中市" },
+    { "id": "nctu", "name": "台灣國立體育棒球場", "city": "桃園市" },
+    { "id": "yunlin", "name": "雲林縣棒球場", "city": "雲林縣" },
+    { "id": "chiayi_city", "name": "嘉義市立體育棒球場", "city": "嘉義市" },
+    { "id": "chiayi_county", "name": "嘉義縣棒球場", "city": "嘉義縣" },
+    { "id": "tainan", "name": "台南市立體育棒球場", "city": "台南市" },
+    { "id": "kaohsiung", "name": "高雄市澄清湖棒球場", "city": "高雄市" },
+    { "id": "lider", "name": "高雄市立德棒球場", "city": "高雄市" },
+    { "id": "pingtung", "name": "屏東縣立體育棒球場", "city": "屏東縣" },
+    { "id": "ctbc", "name": "中國信託公益園區棒球場", "city": "屏東縣" },
+    { "id": "yilan", "name": "宜蘭縣羅東運動公園棒球場", "city": "宜蘭縣" },
+    { "id": "hualien", "name": "花蓮縣棒球場", "city": "花蓮縣" },
+    { "id": "taitung", "name": "台東縣棒球場", "city": "台東縣" }
+  ]
+}

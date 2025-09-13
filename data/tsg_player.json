@@ -1,0 +1,50 @@
+{
+    "team": "台鋼雄鷹",
+    "players": {
+      "捕手": [
+        { "name": "張肇元", "number": 29 },
+        { "name": "吳明鴻", "number": 31 },
+        { "name": "陳世嘉", "number": 78 },
+        { "name": "吳柏萱", "number": 15 },
+        { "name": "廖奕安", "number": 27 },
+        { "name": "陳致嘉", "number": 33 },
+        { "name": "顏采丞", "number": 70 },
+        { "name": "黃穎章", "number": 915 }
+      ],
+      "內野手": [
+        { "name": "曾子祐", "position": "游擊手", "number": 1 },
+        { "name": "顏郁軒", "position": "一壘手", "number": 5 },
+        { "name": "王博玄", "position": "二壘手", "number": 6 },
+        { "name": "林家鋐", "position": "二壘手", "number": 16 },
+        { "name": "湯家豪", "position": "游擊手", "number": 36 },
+        { "name": "吳念庭", "position": "三壘手", "number": 39 },
+        { "name": "郭阜林", "position": "三壘手", "number": 59 },
+        { "name": "杜家明", "position": "三壘手", "number": 71 },
+        { "name": "魔鷹", "position": "一壘手", "number": 94 },
+        { "name": "朱盟", "position": "游擊手", "number": "00" },
+        { "name": "郭永維", "position": "游擊手", "number": 7 },
+        { "name": "黃秉揚", "position": "一壘手", "number": 25 },
+        { "name": "黃劼希", "position": "二壘手", "number": 42 },
+        { "name": "胡冠俞", "position": "游擊手", "number": 43 },
+        { "name": "曾昱磬", "position": "三壘手", "number": 44 },
+        { "name": "宋柏翰", "position": "一壘手", "number": 64 },
+        { "name": "陳飛霖", "position": "游擊手", "number": 79 }
+      ],
+      "外野手": [
+        { "name": "董秉軒", "position": "右外野手", "number": 0 },
+        { "name": "王柏融", "position": "左外野手", "number": 9 },
+        { "name": "顏清浤", "position": "中外野手", "number": 37 },
+        { "name": "高聖恩", "position": "中外野手", "number": 50 },
+        { "name": "陳文杰", "position": "中外野手", "number": 3 },
+        { "name": "林威漢", "position": "右外野手", "number": 8 },
+        { "name": "孫易伸", "position": "中外野手", "number": 13 },
+        { "name": "紀慶然", "position": "右外野手", "number": 24 },
+        { "name": "張豈豪", "position": "中外野手", "number": 49 },
+        { "name": "葉保弟", "position": "左外野手", "number": 73 },
+        { "name": "洪瑋漢", "position": "左外野手", "number": 77 },
+        { "name": "巴奇達魯 妮卡兒", "position": "右外野手", "number": 87 },
+        { "name": "藍寅倫", "position": "右外野手", "number": 88 }
+      ]
+    }
+  }
+  

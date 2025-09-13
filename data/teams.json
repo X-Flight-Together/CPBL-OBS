@@ -1,0 +1,46 @@
+{
+    "teams": [
+      {
+        "id": "TSG",
+        "name_zh": "台鋼雄鷹",
+        "name_en": "TSG Hawks",
+        "color": "#0E4D3E",
+        "logo": "./assets/logos/hawks.svg"
+      },
+      {
+        "id": "CTBC",
+        "name_zh": "中信兄弟",
+        "name_en": "CTBC Brothers",
+        "color": "#F8B708",
+        "logo": "./assets/logos/brothers.svg"
+      },
+      {
+        "id": "Fubon",
+        "name_zh": "富邦悍將",
+        "name_en": "Fubon Guardians",
+        "color": "#08559C",
+        "logo": "./assets/logos/guardians.svg"
+      },
+      {
+        "id": "UniLions",
+        "name_zh": "統一獅",
+        "name_en": "Uni-Lions",
+        "color": "#E36F17",
+        "logo": "./assets/logos/lions.svg"
+      },
+      {
+        "id": "Rakuten",
+        "name_zh": "樂天桃猿",
+        "name_en": "Rakuten Monkeys",
+        "color": "#75171B",
+        "logo": "./assets/logos/monkeys.svg"
+      },
+      {
+        "id": "Dragons",
+        "name_zh": "味全龍",
+        "name_en": "Dragons",
+        "color": "#C31F34",
+        "logo": "./assets/logos/dragons.svg"
+      }
+    ]
+  }

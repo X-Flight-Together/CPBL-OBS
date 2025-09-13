@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CPBL 即時比分板</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="green-bg">
+  <div class="scoreboard">
+    <header class="header">
+      <div class="batter-info">
+        <div class="label">打</div>
+        <div class="batter-name" id="batterName">—</div>
+        <div class="batter-team" id="batterTeam">客隊</div>
+      </div>
+      <div class="pitcher-info">
+        <div class="label red">投</div>
+        <div class="pitcher-name" id="pitcherName">—</div>
+        <div class="pitcher-team" id="pitcherTeam">主隊</div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="team left" id="awayTeam">
+        <div class="logo" id="awayLogo"></div>
+        <div class="team-name" id="awayName">客隊</div>
+        <div class="team-score" id="awayScore">0</div>
+        <div class="batting-indicator" id="awayBattingIndicator">攻</div>
+      </section>
+
+      <section class="center">
+        <div class="inning-row">
+          <div class="half-inning" id="halfInning">▲</div>
+          <div class="inning" id="inning">1</div>
+        </div>
+        <div class="bases" id="bases">
+          <div class="base base2" id="base2"></div>
+          <div class="base base3" id="base3"></div>
+          <div class="base base1" id="base1"></div>
+        </div>
+        <div class="count-outs">
+          <div class="count">
+            <span>壞</span>
+            <div class="dots" id="balls"></div>
+          </div>
+          <div class="count">
+            <span>好</span>
+            <div class="dots" id="strikes"></div>
+          </div>
+          <div class="outs">
+            <span>出局</span>
+            <div class="dots" id="outs"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="team right" id="homeTeam">
+        <div class="logo" id="homeLogo"></div>
+        <div class="team-name" id="homeName">主隊</div>
+        <div class="team-score" id="homeScore">0</div>
+        <div class="batting-indicator" id="homeBattingIndicator">攻</div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="stadium-info">
+        <span class="stadium-label">🏟️ 場地：</span>
+        <span class="stadium-name" id="stadiumName">未選擇場地</span>
+      </div>
+      <div class="game-info">
+        <span>2025 中華職棒例行賽</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Firebase (compat for simplicity) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-database-compat.js"></script>
+  <script src="./js/firebase.js"></script>
+  <script src="./js/scoreboard.js"></script>
+</body>
+</html>
+
+

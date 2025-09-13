@@ -1,0 +1,56 @@
+{
+    "team": "富邦悍將",
+    "players": {
+      "捕手": [
+        { "name": "豊暐", "number": 43 },
+        { "name": "蕭憶銘", "number": 61 },
+        { "name": "戴培峰", "number": 95 },
+        { "name": "*楊皓然", "number": 10 },
+        { "name": "姚冠瑋", "number": 11 },
+        { "name": "楊笑虎", "number": "015" },
+        { "name": "江庭毅", "number": "022" },
+        { "name": "張進德", "number": 47 },
+        { "name": "魏全", "number": 59 },
+        { "name": "張育豪", "number": 74 },
+        { "name": "盧柏華", "number": 83 }
+      ],
+      "內野手": [
+        { "name": "林澤彬", "position": "二壘手", "number": 2 },
+        { "name": "高捷", "position": "二壘手", "number": 4 },
+        { "name": "王念好", "position": "三壘手", "number": 5 },
+        { "name": "葉子霆", "position": "游擊手", "number": 6 },
+        { "name": "范國宸", "position": "一壘手", "number": 46 },
+        { "name": "陳愷佑", "position": "游擊手", "number": 56 },
+        { "name": "林岳谷", "position": "游擊手", "number": 62 },
+        { "name": "董子恩", "position": "三壘手", "number": 78 },
+        { "name": "張育成", "position": "游擊手", "number": 99 },
+        { "name": "王勝偉", "position": "游擊手", "number": 3 },
+        { "name": "蔡袁華辰", "position": "游擊手", "number": "012" },
+        { "name": "李宗賢", "position": "游擊手", "number": 22 },
+        { "name": "黃兆維", "position": "一壘手", "number": 31 },
+        { "name": "楊泯貽", "position": "游擊手", "number": 63 },
+        { "name": "辛元旭", "position": "三壘手", "number": 67 },
+        { "name": "劉俊豪", "position": "游擊手", "number": 85 },
+        { "name": "池恩齊", "position": "游擊手", "number": 97 },
+        { "name": "高國麟", "position": "一壘手", "number": 98 }
+      ],
+      "外野手": [
+        { "name": "潘瑋祥", "position": "中外野手", "number": 0 },
+        { "name": "林哲瑄", "position": "中外野手", "number": 1 },
+        { "name": "林莛淯", "position": "中外野手", "number": 9 },
+        { "name": "*劉承佑", "position": "左外野手", "number": "013" },
+        { "name": "王苡丞", "position": "右外野手", "number": 14 },
+        { "name": "童堉誠", "position": "右外野手", "number": "017" },
+        { "name": "黃騰威", "position": "左外野手", "number": "020" },
+        { "name": "鄭昭誠", "position": "左外野手", "number": 23 },
+        { "name": "申皓瑋", "position": "中外野手", "number": 29 },
+        { "name": "張洺瑀", "position": "左外野手", "number": 33 },
+        { "name": "王正棠", "position": "右外野手", "number": 35 },
+        { "name": "王君佑", "position": "左外野手", "number": 84 },
+        { "name": "蔡佳諺", "position": "中外野手", "number": 65 },
+        { "name": "周佳樂", "position": "中外野手", "number": 77 },
+        { "name": "孔念恩", "position": "右外野手", "number": 82 }
+      ]
+    }
+  }
+  

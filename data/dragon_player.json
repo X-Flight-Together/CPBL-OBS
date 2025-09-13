@@ -1,0 +1,50 @@
+{
+    "team": "味全龍",
+    "players": {
+      "捕手": [
+        { "name": "吉力吉撈．鞏冠", "number": 4 },
+        { "name": "全浩瑋", "number": 22 },
+        { "name": "蔣少宏", "number": 63 },
+        { "name": "林辰勳", "number": 9 },
+        { "name": "劉時豪", "number": 60 },
+        { "name": "吳秉恩", "number": 65 },
+        { "name": "黃贊維", "number": 123 },
+        { "name": "劉曜豪", "number": 125 }
+      ],
+      "內野手": [
+        { "name": "郭嚴文", "position": "二壘手", "number": 6 },
+        { "name": "李凱威", "position": "二壘手", "number": 21 },
+        { "name": "劉俊緯", "position": "游擊手", "number": 23 },
+        { "name": "張政禹", "position": "游擊手", "number": 25 },
+        { "name": "劉基鴻", "position": "三壘手", "number": 46 },
+        { "name": "石翔宇", "position": "游擊手", "number": 72 },
+        { "name": "瑪仕革斯．俄霸律尼", "position": "一壘手", "number": 3 },
+        { "name": "黃柏豪", "position": "一壘手", "number": 10 },
+        { "name": "陽念祖", "position": "游擊手", "number": 26 },
+        { "name": "林智勝", "position": "一壘手", "number": 31 },
+        { "name": "李展毅", "position": "一壘手", "number": 36 },
+        { "name": "陳思仲", "position": "二壘手", "number": 44 },
+        { "name": "拿莫．伊漾", "position": "一壘手", "number": 57 },
+        { "name": "吳東融", "position": "三壘手", "number": 61 },
+        { "name": "周委宏", "position": "二壘手", "number": 88 },
+        { "name": "許子謙", "position": "二壘手", "number": 127 },
+        { "name": "吳承皓", "position": "二壘手", "number": 131 }
+      ],
+      "外野手": [
+        { "name": "陳子豪", "position": "右外野手", "number": 1 },
+        { "name": "郭天信", "position": "中外野手", "number": 2 },
+        { "name": "朱育賢", "position": "左外野手", "number": 11 },
+        { "name": "王順和", "position": "中外野手", "number": 24 },
+        { "name": "張祐銘", "position": "右外野手", "number": 34 },
+        { "name": "曾聖安", "position": "中外野手", "number": 50 },
+        { "name": "林孝程", "position": "右外野手", "number": 7 },
+        { "name": "鄭鎧文", "position": "左外野手", "number": 28 },
+        { "name": "許博閎", "position": "中外野手", "number": 58 },
+        { "name": "張祐嘉", "position": "左外野手", "number": 81 },
+        { "name": "冉承霖", "position": "中外野手", "number": 82 },
+        { "name": "崔聖允", "position": "中外野手", "number": 133 },
+        { "name": "傅鈞致", "position": "左外野手", "number": 135 },
+        { "name": "潘信安", "position": "左外野手", "number": 137 }
+      ]
+    }
+  }

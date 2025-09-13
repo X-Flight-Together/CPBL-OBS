@@ -1,0 +1,50 @@
+{
+    "team": "樂天桃猿",
+    "players": {
+      "捕手": [
+        { "name": "宋嘉翔", "number": 2 },
+        { "name": "林泓育", "number": 11 },
+        { "name": "張閔勛", "number": 28 },
+        { "name": "邱勝宥", "number": 14 },
+        { "name": "邱邦", "number": 29 },
+        { "name": "呂承諺", "number": 60 },
+        { "name": "嚴宏鈞", "number": 62 },
+        { "name": "余新喆", "number": 80 },
+        { "name": "毛英傑", "number": 89 }
+      ],
+      "內野手": [
+        { "name": "林承飛", "position": "游擊手", "number": 6 },
+        { "name": "林子偉", "position": "二壘手", "number": 15 },
+        { "name": "林立", "position": "二壘手", "number": 39 },
+        { "name": "廖健富", "position": "一壘手", "number": 58 },
+        { "name": "林智平", "position": "三壘手", "number": 79 },
+        { "name": "馬傑森", "position": "游擊手", "number": 94 },
+        { "name": "李勛傑", "position": "一壘手", "number": 95 },
+        { "name": "梁家榮", "position": "三壘手", "number": 5 },
+        { "name": "陳佳樂", "position": "一壘手", "number": 8 },
+        { "name": "吳桀睿", "position": "一壘手", "number": 12 },
+        { "name": "杜禹鋒", "position": "二壘手", "number": 31 },
+        { "name": "劉曜維", "position": "游擊手", "number": 32 },
+        { "name": "張趙紘", "position": "二壘手", "number": 33 },
+        { "name": "董順傑", "position": "游擊手", "number": 38 },
+        { "name": "馮健庭", "position": "二壘手", "number": 45 },
+        { "name": "曾冠傑", "position": "游擊手", "number": 55 },
+        { "name": "劉子杰", "position": "三壘手", "number": 56 },
+        { "name": "游承勳", "position": "游擊手", "number": 67 },
+        { "name": "許賀捷", "position": "二壘手", "number": 85 },
+        { "name": "張家豪", "position": "二壘手", "number": 111 }
+      ],
+      "外野手": [
+        { "name": "成晉", "position": "右外野手", "number": 35 },
+        { "name": "余德龍", "position": "左外野手", "number": 36 },
+        { "name": "林政華", "position": "中外野手", "number": 65 },
+        { "name": "鍾玉成", "position": "右外野手", "number": 97 },
+        { "name": "陳晨威", "position": "中外野手", "number": 98 },
+        { "name": "邱鑫", "position": "中外野手", "number": 7 },
+        { "name": "蔡鎮宇", "position": "左外野手", "number": 24 },
+        { "name": "何品室融", "position": "左外野手", "number": 66 },
+        { "name": "林禹叡", "position": "中外野手", "number": 76 }
+      ]
+    }
+  }
+  

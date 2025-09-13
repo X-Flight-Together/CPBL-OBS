@@ -1,0 +1,50 @@
+{
+    "team": "統一7-ELEVEn獅",
+    "short": "Uni-Lions",
+    "color": "#E36F17",
+    "players": {
+      "catcher": [
+        { "name": "林岱安", "position": "捕手", "number": 31 },
+        { "name": "陳重羽", "position": "捕手", "number": 65 },
+        { "name": "張翔", "position": "捕手", "number": 4 },
+        { "name": "柯育民", "position": "捕手", "number": 36 },
+        { "name": "吳柏賢", "position": "捕手", "number": 44 },
+        { "name": "張聖豪", "position": "捕手", "number": 46 },
+        { "name": "潘磊", "position": "捕手", "number": 54 },
+        { "name": "余羿賢", "position": "捕手", "number": 78 }
+      ],
+      "infielder": [
+        { "name": "林子豪", "position": "三壘手", "number": 2 },
+        { "name": "陳鏞基", "position": "三壘手", "number": 13 },
+        { "name": "陳聖平", "position": "游擊手", "number": 15 },
+        { "name": "林培緯", "position": "一壘手", "number": 25 },
+        { "name": "林祖傑", "position": "游擊手", "number": 39 },
+        { "name": "林泓弦", "position": "游擊手", "number": 67 },
+        { "name": "何恆佑", "position": "一壘手", "number": 7 },
+        { "name": "楊竣翔", "position": "二壘手", "number": 9 },
+        { "name": "許哲晏", "position": "游擊手", "number": 10 },
+        { "name": "全紹凱", "position": "二壘手", "number": 27 },
+        { "name": "潘傑楷", "position": "三壘手", "number": 35 },
+        { "name": "張皓崴", "position": "游擊手", "number": 38 },
+        { "name": "林靖凱", "position": "二壘手", "number": 64 },
+        { "name": "陳重廷", "position": "游擊手", "number": 66 },
+        { "name": "林益全", "position": "一壘手", "number": 99 },
+        { "name": "黃天賜", "position": "游擊手", "number": 123 },
+        { "name": "王翾祐", "position": "二壘手", "number": 168 }
+      ],
+      "outfielder": [
+        { "name": "朱迦恩", "position": "左外野手", "number": 8 },
+        { "name": "邱智呈", "position": "右外野手", "number": 14 },
+        { "name": "林佳緯", "position": "左外野手", "number": 20 },
+        { "name": "陳傑憲", "position": "中外野手", "number": 24 },
+        { "name": "蘇智傑", "position": "左外野手", "number": 32 },
+        { "name": "胡金龍", "position": "左外野手", "number": 51 },
+        { "name": "林安可", "position": "右外野手", "number": 77 },
+        { "name": "李丞齡", "position": "右外野手", "number": 6 },
+        { "name": "田子杰", "position": "右外野手", "number": 49 },
+        { "name": "張偉聖", "position": "中外野手", "number": 52 },
+        { "name": "陳維祥", "position": "左外野手", "number": 63 }
+      ]
+    }
+  }
+  

@@ -1,0 +1,51 @@
+{
+    "team": "中信兄弟",
+    "short": "CTBC Brothers",
+    "color": "#F8B708",
+    "players": {
+      "catcher": [
+        { "name": "陳統恩", "position": "捕手", "number": 48 },
+        { "name": "高宇杰", "position": "捕手", "number": 65 },
+        { "name": "林吳晉瑋", "position": "捕手", "number": 0 },
+        { "name": "胡孟智", "position": "捕手", "number": 52 },
+        { "name": "陳九登", "position": "捕手", "number": 72 },
+        { "name": "黃鈞聲", "position": "捕手", "number": 82 },
+        { "name": "徐博瑋", "position": "捕手", "number": 97 },
+        { "name": "焦子杰", "position": "捕手", "number": 103 },
+        { "name": "吳瑞璁", "position": "捕手", "number": 115 }
+      ],
+      "infielder": [
+        { "name": "王威晨", "position": "三壘手", "number": 9 },
+        { "name": "張仁瑋", "position": "二壘手", "number": 28 },
+        { "name": "陳俊秀", "position": "一壘手", "number": 29 },
+        { "name": "林志綱", "position": "三壘手", "number": 47 },
+        { "name": "王政順", "position": "三壘手", "number": 61 },
+        { "name": "黃韋盛", "position": "一壘手", "number": 66 },
+        { "name": "許基宏", "position": "一壘手", "number": 74 },
+        { "name": "江坤宇", "position": "游擊手", "number": 90 },
+        { "name": "岳東華", "position": "二壘手", "number": 98 },
+        { "name": "楊祥禾", "position": "游擊手", "number": 3 },
+        { "name": "張士綸", "position": "游擊手", "number": 4 },
+        { "name": "黃霆杉", "position": "三壘手", "number": 17 },
+        { "name": "蔡琞傑", "position": "二壘手", "number": 18 },
+        { "name": "馬鋼", "position": "三壘手", "number": 68 },
+        { "name": "徐紹予", "position": "一壘手", "number": 69 },
+        { "name": "林瑞鈞", "position": "二壘手", "number": 75 },
+        { "name": "蘇緯達", "position": "一壘手", "number": 96 },
+        { "name": "王興楷", "position": "三壘手", "number": 105 }
+      ],
+      "outfielder": [
+        { "name": "許庭綸", "position": "中外野手", "number": 13 },
+        { "name": "林書逸", "position": "中外野手", "number": 43 },
+        { "name": "宋晟睿", "position": "左外野手", "number": 88 },
+        { "name": "岳政華", "position": "中外野手", "number": 92 },
+        { "name": "曾頌恩", "position": "中外野手", "number": 1 },
+        { "name": "李聖裕", "position": "中外野手", "number": 2 },
+        { "name": "張志豪", "position": "中外野手", "number": 7 },
+        { "name": "詹子賢", "position": "左外野手", "number": 39 },
+        { "name": "黃鈞麟", "position": "右外野手", "number": 60 },
+        { "name": "劉貴元", "position": "中外野手", "number": 85 }
+      ]
+    }
+  }
+  

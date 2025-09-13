@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CPBL 比分主控台</title>
+  <link rel="stylesheet" href="./console-styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="console-body">
+  <div class="console-container">
+    <header class="console-header">
+      <h1>⚾ CPBL 比分主控台</h1>
+      <div class="header-actions">
+        <a href="./index.html" class="btn-secondary">📺 比分板</a>
+        <button class="btn-danger" id="resetAll">🔄 重置整場</button>
+      </div>
+    </header>
+
+    <main class="console-main">
+      <!-- 隊伍設定 -->
+      <section class="card teams-section">
+        <h2 class="card-title">🏟️ 隊伍設定</h2>
+        <div class="teams-grid">
+          <div class="team-card away">
+            <div class="team-header">
+              <h3>客隊</h3>
+              <div class="team-score">
+                <button class="btn-score" data-act="awayScore-">−</button>
+                <span class="score-value" id="awayScoreLabel">0</span>
+                <button class="btn-score" data-act="awayScore+">+</button>
+              </div>
+            </div>
+            <div class="team-controls">
+              <select id="awayTeamSelect" class="team-select">
+                <option value="">選擇預設隊伍</option>
+              </select>
+              <input id="awayNameInput" class="team-input" placeholder="客隊名稱">
+            </div>
+          </div>
+
+          <div class="team-card home">
+            <div class="team-header">
+              <h3>主隊</h3>
+              <div class="team-score">
+                <button class="btn-score" data-act="homeScore-">−</button>
+                <span class="score-value" id="homeScoreLabel">0</span>
+                <button class="btn-score" data-act="homeScore+">+</button>
+              </div>
+            </div>
+            <div class="team-controls">
+              <select id="homeTeamSelect" class="team-select">
+                <option value="">選擇預設隊伍</option>
+              </select>
+              <input id="homeNameInput" class="team-input" placeholder="主隊名稱">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 比賽狀態 -->
+      <section class="card game-status">
+        <h2 class="card-title">⚡ 比賽狀態</h2>
+        <div class="status-grid">
+          <div class="status-item">
+            <label>攻守方</label>
+            <div class="btn-group">
+              <button class="btn-toggle" data-act="batting=away">客隊攻</button>
+              <button class="btn-toggle" data-act="batting=home">主隊攻</button>
+            </div>
+          </div>
+          <div class="status-item">
+            <label>上下半</label>
+            <div class="btn-group">
+              <button class="btn-toggle" data-act="half=top">▲ 上半</button>
+              <button class="btn-toggle" data-act="half=bottom">▼ 下半</button>
+            </div>
+          </div>
+          <div class="status-item">
+            <label>局數</label>
+            <div class="inning-control">
+              <button class="btn-round" data-act="inning-">−</button>
+              <span class="inning-value" id="inningLabel">1</span>
+              <button class="btn-round" data-act="inning+">+</button>
+            </div>
+          </div>
+          <div class="status-item">
+            <label>比賽場地</label>
+            <select id="stadiumSelect" class="stadium-select">
+              <option value="">選擇球場</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- 球員設定 -->
+      <section class="card players-section">
+        <h2 class="card-title">👥 球員設定</h2>
+        <div class="players-grid">
+          <div class="player-card">
+            <h3>現在打者</h3>
+            <input id="batterInput" class="player-input" placeholder="打者姓名">
+          </div>
+          <div class="player-card">
+            <h3>現在投手</h3>
+            <input id="pitcherInput" class="player-input" placeholder="投手姓名">
+          </div>
+        </div>
+        
+        <div class="pitchers-section">
+          <div class="pitcher-card">
+            <h3>客隊投手</h3>
+            <div class="pitcher-controls">
+              <input id="awayPitcherInput" class="pitcher-input" placeholder="搜尋投手">
+              <button class="btn-primary" id="setAwayPitcher">設為現在投手</button>
+            </div>
+            <div class="pitcher-list" id="awayPitcherList"></div>
+          </div>
+          <div class="pitcher-card">
+            <h3>主隊投手</h3>
+            <div class="pitcher-controls">
+              <input id="homePitcherInput" class="pitcher-input" placeholder="搜尋投手">
+              <button class="btn-primary" id="setHomePitcher">設為現在投手</button>
+            </div>
+            <div class="pitcher-list" id="homePitcherList"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 好壞球/出局 -->
+      <section class="card count-section">
+        <h2 class="card-title">⚾ 好壞球/出局</h2>
+        <div class="count-grid">
+          <div class="count-item">
+            <label>好球</label>
+            <div class="count-controls">
+              <button class="btn-count" data-act="strike-">−</button>
+              <span class="count-value" id="strikeLabel">0</span>
+              <button class="btn-count" data-act="strike+">+</button>
+            </div>
+          </div>
+          <div class="count-item">
+            <label>壞球</label>
+            <div class="count-controls">
+              <button class="btn-count" data-act="ball-">−</button>
+              <span class="count-value" id="ballLabel">0</span>
+              <button class="btn-count" data-act="ball+">+</button>
+            </div>
+          </div>
+          <div class="count-item">
+            <label>出局</label>
+            <div class="count-controls">
+              <button class="btn-count" data-act="out-">−</button>
+              <span class="count-value" id="outLabel">0</span>
+              <button class="btn-count" data-act="out+">+</button>
+            </div>
+          </div>
+        </div>
+        <button class="btn-warning" data-act="reset-count">🔄 重置好壞球</button>
+      </section>
+
+      <!-- 壘包狀態 -->
+      <section class="card bases-section">
+        <h2 class="card-title">🏃 壘包狀態</h2>
+        <div class="bases-grid">
+          <button class="btn-base" data-act="base1^">一壘</button>
+          <button class="btn-base" data-act="base2^">二壘</button>
+          <button class="btn-base" data-act="base3^">三壘</button>
+          <button class="btn-warning" data-act="clear-bases">清空壘包</button>
+        </div>
+      </section>
+
+      <!-- 打序設定 -->
+      <section class="card lineup-section">
+        <h2 class="card-title">📋 打序設定</h2>
+        <div class="lineup-tabs">
+          <button class="tab-btn active" data-tab="away">客隊打序</button>
+          <button class="tab-btn" data-tab="home">主隊打序</button>
+        </div>
+        <div class="tab-content">
+          <div class="tab-panel active" id="awayLineupPanel">
+            <div class="lineup-form" id="awayLineupForm"></div>
+            <div class="lineup-actions">
+              <button class="btn-primary" id="saveAwayLineup">💾 儲存客隊打序</button>
+              <button class="btn-success" id="nextAwayBatter">➡️ 客隊下一棒</button>
+            </div>
+          </div>
+          <div class="tab-panel" id="homeLineupPanel">
+            <div class="lineup-form" id="homeLineupForm"></div>
+            <div class="lineup-actions">
+              <button class="btn-primary" id="saveHomeLineup">💾 儲存主隊打序</button>
+              <button class="btn-success" id="nextHomeBatter">➡️ 主隊下一棒</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Firebase (compat) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-database-compat.js"></script>
+  <script src="./js/firebase.js"></script>
+  <script src="./js/console.js"></script>
+</body>
+</html>
