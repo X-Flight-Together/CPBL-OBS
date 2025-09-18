@@ -17,10 +17,10 @@ body {
   color: var(--text);
   font-family: "Noto Sans TC", system-ui, -apple-system, Segoe UI, Roboto, Arial, "Microsoft JhengHei", sans-serif;
 }
-body.green-bg { background: #00a000; }
+body.green-bg { background: #4b2e83; }
 
 .scoreboard {
-  max-width: 900px;
+  max-width: 1100px;
   margin: 16px auto;
   background: var(--panel);
   border-radius: 12px;
@@ -48,8 +48,8 @@ body.green-bg { background: #00a000; }
   text-align: center;
 }
 .batter-name,.pitcher-name { 
-  font-weight: 700; 
-  font-size: 16px;
+  font-weight: 900; 
+  font-size: 24px;
   margin-bottom: 2px;
 }
 .batter-team,.pitcher-team {
@@ -59,16 +59,31 @@ body.green-bg { background: #00a000; }
 }
 .avg,.pitch-count { color: var(--sub); }
 
-.main { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 10px; margin-top: 10px; }
+.main { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 16px; margin-top: 12px; }
 .team {
-  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 8px;
-  padding: 10px; border-radius: 10px; background: #10141c;
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px;
+  padding: 12px; border-radius: 12px; background: #10141c;
   position: relative;
 }
 .team.left { background: #8b0e0e; }
 .team.right { background: #cf6609; }
-.team .team-name { font-weight: 900; font-size: 28px; }
-.team .team-score { justify-self: end; font-size: 54px; font-weight: 900; }
+.team .team-name { font-weight: 900; font-size: 28px; line-height: 1.05; margin-bottom: 2px; font-family: "Noto Sans TC", sans-serif; }
+.team .team-name-en {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffffd9;
+  letter-spacing: .5px;
+  line-height: 1.05;
+  margin-top: 0;
+  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+  font-family: "Oswald", system-ui, sans-serif;
+  text-transform: uppercase;
+}
+/* Stack zh/en vertically in the middle column */
+.team .team-names { grid-column: 2; display: flex; flex-direction: column; justify-content: center; }
+.team .team-name,
+.team .team-name-en { justify-self: start; }
+.team .team-score { justify-self: end; font-size: 60px; font-weight: 900; line-height: 1; }
 
 /* Batting indicator */
 .batting-indicator {
@@ -154,6 +169,25 @@ body.green-bg { background: #00a000; }
   align-items: center;
   gap: 12px;
 }
+
+/* Widgets */
+.widget-container { max-width: 1100px; margin: 12px auto 18px; padding: 0 12px; }
+.widget-row { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.widget { background: #0f1218; border: 1px solid #2a303c; border-radius: 10px; padding: 10px; box-shadow: 0 8px 30px rgba(0,0,0,.25); }
+.clock { display: flex; align-items: baseline; gap: 12px; justify-content: center; color: #e9edf1; }
+.clock-time { font-weight: 900; font-size: 28px; letter-spacing: 1px; }
+.clock-date { color: #9aa3af; font-weight: 600; }
+
+/* Win probability */
+.winprob-header { font-weight: 800; margin-bottom: 8px; letter-spacing: .5px; }
+.winprob-table { display: grid; gap: 8px; }
+.winprob-row { display: grid; grid-template-columns: 120px 1fr 72px; align-items: center; gap: 8px; }
+.winprob-row .team-col { font-weight: 700; }
+.winprob-row .pct-col { font-weight: 900; text-align: right; }
+.progress { width: 100%; height: 14px; background: #1f2430; border: 1px solid #2a303c; border-radius: 999px; overflow: hidden; }
+.progress-bar { height: 100%; background: #4ecdc4; transition: width .3s ease; }
+.progress-bar.away { background: #9ecbff; }
+.progress-bar.home { background: #ffd166; }
 
 /* Console */
 .console { max-width: 900px; margin: 12px auto; padding: 10px; }

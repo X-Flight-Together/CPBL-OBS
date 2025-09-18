@@ -130,10 +130,12 @@
       const name = opt.getAttribute('data-name');
       const color = opt.getAttribute('data-color');
       const logo = opt.getAttribute('data-logo');
+      const team = teams.find(function (t) { return t.id === opt.value; });
       const updates = {};
       updates[side + 'Team/name'] = name;
       updates[side + 'Team/color'] = color;
       if (logo) updates[side + 'Team/logo'] = logo;
+      if (team && team.name_en) updates[side + 'Team/nameEn'] = team.name_en;
       applyUpdates(updates);
       loadRoster(side, opt.value);
       // load pitchers by team name (zh)
@@ -256,6 +258,15 @@
         return t ? t.logo : null;
       }
       const updates = {};
+      // Backfill English team names if missing
+      if (s.awayTeam?.name && (!s.awayTeam.nameEn || s.awayTeam.nameEn === '')) {
+        const t = presetTeams.find(function (x) { return x.name_zh === s.awayTeam.name; });
+        if (t && t.name_en) updates['awayTeam/nameEn'] = t.name_en;
+      }
+      if (s.homeTeam?.name && (!s.homeTeam.nameEn || s.homeTeam.nameEn === '')) {
+        const t = presetTeams.find(function (x) { return x.name_zh === s.homeTeam.name; });
+        if (t && t.name_en) updates['homeTeam/nameEn'] = t.name_en;
+      }
       // Also set team selects based on name and load roster once
       if (els.awayTeamSelect && s.awayTeam?.name) {
         const t = presetTeams.find(function (x) { return x.name_zh === s.awayTeam.name; });

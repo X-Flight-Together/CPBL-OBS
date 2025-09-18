@@ -5,7 +5,9 @@
     batterTeam: document.getElementById('batterTeam'),
     pitcherTeam: document.getElementById('pitcherTeam'),
     awayName: document.getElementById('awayName'),
+    awayNameEn: document.getElementById('awayNameEn'),
     homeName: document.getElementById('homeName'),
+    homeNameEn: document.getElementById('homeNameEn'),
     awayScore: document.getElementById('awayScore'),
     homeScore: document.getElementById('homeScore'),
     halfInning: document.getElementById('halfInning'),
@@ -21,6 +23,14 @@
     awayBattingIndicator: document.getElementById('awayBattingIndicator'),
     homeBattingIndicator: document.getElementById('homeBattingIndicator'),
     stadiumName: document.getElementById('stadiumName'),
+    clockTime: document.getElementById('clockTime'),
+    clockDate: document.getElementById('clockDate'),
+    winAwayName: document.getElementById('winAwayName'),
+    winHomeName: document.getElementById('winHomeName'),
+    winAwayBar: document.getElementById('winAwayBar'),
+    winHomeBar: document.getElementById('winHomeBar'),
+    winAwayPct: document.getElementById('winAwayPct'),
+    winHomePct: document.getElementById('winHomePct'),
   };
 
   function renderDots(container, count, max) {
@@ -39,6 +49,8 @@
     els.homeName.textContent = state.homeTeam?.name || '主隊';
     els.awayScore.textContent = state.awayTeam?.score ?? 0;
     els.homeScore.textContent = state.homeTeam?.score ?? 0;
+    if (els.awayNameEn) els.awayNameEn.textContent = state.awayTeam?.nameEn || '';
+    if (els.homeNameEn) els.homeNameEn.textContent = state.homeTeam?.nameEn || '';
 
     const top = (state.half === 'top');
     els.halfInning.textContent = top ? '▲' : '▼';
@@ -70,6 +82,37 @@
     // Apply team colors
     if (state.awayTeam?.color) els.awayTeam.style.background = state.awayTeam.color;
     if (state.homeTeam?.color) els.homeTeam.style.background = state.homeTeam.color;
+
+    // Update win probability (simple heuristic if provided, else split)
+    const awayName = state.awayTeam?.name || '客隊';
+    const homeName = state.homeTeam?.name || '主隊';
+    if (els.winAwayName) els.winAwayName.textContent = awayName;
+    if (els.winHomeName) els.winHomeName.textContent = homeName;
+    // Heuristic auto-calculation if DB not providing winProb
+    function sigmoid(x){ return 1 / (1 + Math.exp(-x)); }
+    // Game progress (0 to 1) based on inning and half
+    var inningNum = Number(state.inning || 1);
+    var half = String(state.half || 'top');
+    var progress = Math.min(1, Math.max(0, ((inningNum - 1) + (half === 'bottom' ? 0.5 : 0)) / 9));
+    // Lead from home perspective
+    var homeLead = (Number(state.homeTeam?.score || 0) - Number(state.awayTeam?.score || 0));
+    // Base/out situation advantage for batting team
+    var baseVal = (state.bases?.b1 ? 0.35 : 0) + (state.bases?.b2 ? 0.55 : 0) + (state.bases?.b3 ? 0.85 : 0);
+    var outs = Number(state.counts?.outs || 0);
+    var batAdv = baseVal - outs * 0.45; // runners positive, outs negative
+    // Edge from home perspective
+    var edge = homeLead + (state.batting === 'home' ? batAdv : -batAdv);
+    // Late game amplifies impact
+    var k = 0.9 + 1.4 * progress;
+    var homeProbCalc = sigmoid(k * edge) * 100;
+    var awayProbCalc = 100 - homeProbCalc;
+    // If explicit probs exist, prefer them; else use heuristic
+    const awayProb = (state.winProb && typeof state.winProb.away === 'number') ? state.winProb.away : awayProbCalc;
+    const homeProb = (state.winProb && typeof state.winProb.home === 'number') ? state.winProb.home : homeProbCalc;
+    if (els.winAwayBar) els.winAwayBar.style.width = Math.max(0, Math.min(awayProb, 100)) + '%';
+    if (els.winHomeBar) els.winHomeBar.style.width = Math.max(0, Math.min(homeProb, 100)) + '%';
+    if (els.winAwayPct) els.winAwayPct.textContent = Math.round(awayProb) + '%';
+    if (els.winHomePct) els.winHomePct.textContent = Math.round(homeProb) + '%';
 
     // Apply team logos to fixed placeholders
     var awayLogo = document.getElementById('awayLogo');
@@ -120,6 +163,24 @@
     }
     render(snap.val());
   });
+
+  // Clock widget updater
+  function pad(n){ return String(n).padStart(2, '0'); }
+  function updateClock(){
+    if (!els.clockTime || !els.clockDate) return;
+    const now = new Date();
+    const hh = pad(now.getHours());
+    const mm = pad(now.getMinutes());
+    const ss = pad(now.getSeconds());
+    const y = now.getFullYear();
+    const m = pad(now.getMonth()+1);
+    const d = pad(now.getDate());
+    const wk = ['日','一','二','三','四','五','六'][now.getDay()];
+    els.clockTime.textContent = hh+':'+mm+':'+ss;
+    els.clockDate.textContent = y+'/'+m+'/'+d+' ('+wk+')';
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
 })();
 
 

@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="./styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body class="green-bg">
   <div class="scoreboard">
@@ -27,7 +27,10 @@
     <main class="main">
       <section class="team left" id="awayTeam">
         <div class="logo" id="awayLogo"></div>
-        <div class="team-name" id="awayName">客隊</div>
+        <div class="team-names">
+          <div class="team-name" id="awayName">客隊</div>
+          <div class="team-name-en" id="awayNameEn"></div>
+        </div>
         <div class="team-score" id="awayScore">0</div>
         <div class="batting-indicator" id="awayBattingIndicator">攻</div>
       </section>
@@ -60,7 +63,10 @@
 
       <section class="team right" id="homeTeam">
         <div class="logo" id="homeLogo"></div>
-        <div class="team-name" id="homeName">主隊</div>
+        <div class="team-names">
+          <div class="team-name" id="homeName">主隊</div>
+          <div class="team-name-en" id="homeNameEn"></div>
+        </div>
         <div class="team-score" id="homeScore">0</div>
         <div class="batting-indicator" id="homeBattingIndicator">攻</div>
       </section>
@@ -77,6 +83,40 @@
     </footer>
 
   </div>
+
+  <section class="widget-container">
+    <div class="widget-row">
+      <div class="widget clock" id="clockWidget">
+        <div class="clock-time" id="clockTime">--:--:--</div>
+        <div class="clock-date" id="clockDate">----/--/-- (—)</div>
+      </div>
+    </div>
+    <div class="widget-row">
+      <div class="widget winprob" id="winProbWidget">
+        <div class="winprob-header">勝率預測 (WE)</div>
+        <div class="winprob-table">
+          <div class="winprob-row">
+            <div class="team-col" id="winAwayName">客隊</div>
+            <div class="bar-col">
+              <div class="progress">
+                <div class="progress-bar away" id="winAwayBar" style="width:50%"></div>
+              </div>
+            </div>
+            <div class="pct-col" id="winAwayPct">50%</div>
+          </div>
+          <div class="winprob-row">
+            <div class="team-col" id="winHomeName">主隊</div>
+            <div class="bar-col">
+              <div class="progress">
+                <div class="progress-bar home" id="winHomeBar" style="width:50%"></div>
+              </div>
+            </div>
+            <div class="pct-col" id="winHomePct">50%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Firebase (compat for simplicity) -->
   <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
