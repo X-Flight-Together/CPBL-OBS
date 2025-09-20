@@ -31,6 +31,10 @@
     winHomeBar: document.getElementById('winHomeBar'),
     winAwayPct: document.getElementById('winAwayPct'),
     winHomePct: document.getElementById('winHomePct'),
+    awayLineupName: document.getElementById('awayLineupName'),
+    homeLineupName: document.getElementById('homeLineupName'),
+    awayLineup: document.getElementById('awayLineup'),
+    homeLineup: document.getElementById('homeLineup'),
   };
 
   function renderDots(container, count, max) {
@@ -135,6 +139,80 @@
     if (els.stadiumName) {
       els.stadiumName.textContent = state.stadium || '未選擇場地';
     }
+
+    // Update lineup display
+    updateLineup(state);
+  }
+
+  function updateLineup(state) {
+    // Update team names in lineup
+    if (els.awayLineupName) {
+      els.awayLineupName.textContent = state.awayTeam?.name || '客隊';
+    }
+    if (els.homeLineupName) {
+      els.homeLineupName.textContent = state.homeTeam?.name || '主隊';
+    }
+
+
+    // Update away team lineup
+    if (els.awayLineup) {
+      els.awayLineup.innerHTML = '';
+      for (let i = 0; i < 9; i++) {
+        const playerDiv = document.createElement('div');
+        playerDiv.className = 'lineup-player';
+        
+        // Handle different data structures
+        let playerName = '—';
+        if (state.awayLineup && Array.isArray(state.awayLineup)) {
+          const player = state.awayLineup[i];
+          if (typeof player === 'string') {
+            playerName = player || '—';
+          } else if (player && typeof player === 'object') {
+            playerName = player.name || '—';
+          }
+        }
+        
+        playerDiv.textContent = `${i + 1}. ${playerName}`;
+        
+        // Highlight current batter
+        if (state.batting === 'away' && state.currentBatter === i) {
+          playerDiv.classList.add('current');
+          console.log('Highlighting away batter:', i, playerName);
+        }
+        
+        els.awayLineup.appendChild(playerDiv);
+      }
+    }
+
+    // Update home team lineup
+    if (els.homeLineup) {
+      els.homeLineup.innerHTML = '';
+      for (let i = 0; i < 9; i++) {
+        const playerDiv = document.createElement('div');
+        playerDiv.className = 'lineup-player';
+        
+        // Handle different data structures
+        let playerName = '—';
+        if (state.homeLineup && Array.isArray(state.homeLineup)) {
+          const player = state.homeLineup[i];
+          if (typeof player === 'string') {
+            playerName = player || '—';
+          } else if (player && typeof player === 'object') {
+            playerName = player.name || '—';
+          }
+        }
+        
+        playerDiv.textContent = `${i + 1}. ${playerName}`;
+        
+        // Highlight current batter
+        if (state.batting === 'home' && state.currentBatter === i) {
+          playerDiv.classList.add('current');
+          console.log('Highlighting home batter:', i, playerName);
+        }
+        
+        els.homeLineup.appendChild(playerDiv);
+      }
+    }
   }
 
   function ensureDefault(snapshot) {
@@ -151,6 +229,9 @@
       counts: { balls: 0, strikes: 0, outs: 0 },
       bases: { b1: false, b2: false, b3: false },
       stadium: '',
+      currentBatter: 0,
+      awayLineup: Array(9).fill().map((_, i) => ({ name: '—' })),
+      homeLineup: Array(9).fill().map((_, i) => ({ name: '—' })),
       updatedAt: Date.now(),
     });
   }

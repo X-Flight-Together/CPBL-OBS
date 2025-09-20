@@ -189,6 +189,73 @@ body.green-bg { background: #4b2e83; }
 .progress-bar.away { background: #9ecbff; }
 .progress-bar.home { background: #ffd166; }
 
+/* Lineup widget */
+.lineup { background: #0f1218; border: 1px solid #2a303c; border-radius: 12px; padding: 16px; box-shadow: 0 8px 30px rgba(0,0,0,.25); }
+.lineup-header { 
+  font-weight: 900; 
+  font-size: 18px; 
+  margin-bottom: 16px; 
+  letter-spacing: .5px; 
+  text-align: center; 
+  color: var(--accent);
+  text-shadow: 0 2px 4px rgba(0,0,0,.3);
+}
+.lineup-container { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.lineup-team { display: flex; flex-direction: column; }
+.lineup-team-name { 
+  font-size: 16px; 
+  font-weight: 700; 
+  color: var(--accent); 
+  margin-bottom: 12px; 
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0,0,0,.3);
+  padding: 8px;
+  background: rgba(116,198,157,.1);
+  border-radius: 8px;
+  border: 1px solid rgba(116,198,157,.2);
+}
+.lineup-players { display: grid; grid-template-columns: 1fr; gap: 4px; }
+.lineup-player { 
+  font-size: 14px; 
+  font-weight: 600;
+  padding: 8px 12px; 
+  background: rgba(255,255,255,.08); 
+  border-radius: 8px; 
+  border: 1px solid rgba(255,255,255,.12);
+  transition: all .3s ease;
+  text-shadow: 0 1px 2px rgba(0,0,0,.2);
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+.lineup-player:hover { 
+  background: rgba(255,255,255,.12); 
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,.15);
+}
+.lineup-player.current { 
+  background: linear-gradient(135deg, var(--accent), #5cb85c); 
+  color: #000; 
+  font-weight: 800; 
+  border-color: var(--accent);
+  box-shadow: 0 0 12px rgba(116,198,157,.6), 0 4px 8px rgba(0,0,0,.2);
+  transform: translateY(-2px);
+  text-shadow: none;
+  position: relative;
+}
+.lineup-player.current::before {
+  content: "現在打者";
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff4444;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.3);
+  z-index: 10;
+}
+
 /* Console */
 .console { max-width: 900px; margin: 12px auto; padding: 10px; }
 .console h1 { margin: 0 0 10px; }

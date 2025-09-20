@@ -212,6 +212,9 @@
       pitcher: { name: els.pitcherInput.value || '—', pitches: 0 },
       counts: { balls: 0, strikes: 0, outs: 0 },
       bases: { b1: false, b2: false, b3: false },
+      currentBatter: 0,
+      awayLineup: Array(9).fill().map((_, i) => ({ name: '—' })),
+      homeLineup: Array(9).fill().map((_, i) => ({ name: '—' })),
       updatedAt: Date.now(),
     });
   });
@@ -410,13 +413,31 @@
     if (s.awayLineup) {
       for (let i = 1; i <= 9; i++) {
         const inp = document.getElementById('away_lineup_' + i);
-        if (inp) inp.value = s.awayLineup[i - 1] || '';
+        if (inp) {
+          const player = s.awayLineup[i - 1];
+          if (typeof player === 'string') {
+            inp.value = player || '';
+          } else if (player && typeof player === 'object') {
+            inp.value = player.name || '';
+          } else {
+            inp.value = '';
+          }
+        }
       }
     }
     if (s.homeLineup) {
       for (let i = 1; i <= 9; i++) {
         const inp = document.getElementById('home_lineup_' + i);
-        if (inp) inp.value = s.homeLineup[i - 1] || '';
+        if (inp) {
+          const player = s.homeLineup[i - 1];
+          if (typeof player === 'string') {
+            inp.value = player || '';
+          } else if (player && typeof player === 'object') {
+            inp.value = player.name || '';
+          } else {
+            inp.value = '';
+          }
+        }
       }
     }
   });
@@ -426,12 +447,44 @@
     const arr = [];
     for (let i = 1; i <= 9; i++) {
       const inp = document.getElementById(prefix + 'lineup_' + i);
-      arr.push((inp && inp.value) ? inp.value : '');
+      const playerName = (inp && inp.value) ? inp.value : '';
+      arr.push({ name: playerName || '—' });
     }
     return arr;
   }
   if (els.saveAwayLineup) els.saveAwayLineup.addEventListener('click', function () { applyUpdates({ awayLineup: collect('away_') }); });
   if (els.saveHomeLineup) els.saveHomeLineup.addEventListener('click', function () { applyUpdates({ homeLineup: collect('home_') }); });
+
+  // Next batter functionality
+  document.getElementById('nextAwayBatter')?.addEventListener('click', function () {
+    const currentBatter = latestGameState?.currentBatter || 0;
+    const nextBatter = (currentBatter + 1) % 9;
+    const lineup = latestGameState?.awayLineup || [];
+    const nextPlayer = lineup[nextBatter] || { name: '—' };
+    
+    console.log('Next Away Batter:', { currentBatter, nextBatter, nextPlayer, lineup });
+    
+    applyUpdates({ 
+      currentBatter: nextBatter,
+      'batter/name': nextPlayer.name,
+      batting: 'away'
+    });
+  });
+
+  document.getElementById('nextHomeBatter')?.addEventListener('click', function () {
+    const currentBatter = latestGameState?.currentBatter || 0;
+    const nextBatter = (currentBatter + 1) % 9;
+    const lineup = latestGameState?.homeLineup || [];
+    const nextPlayer = lineup[nextBatter] || { name: '—' };
+    
+    console.log('Next Home Batter:', { currentBatter, nextBatter, nextPlayer, lineup });
+    
+    applyUpdates({ 
+      currentBatter: nextBatter,
+      'batter/name': nextPlayer.name,
+      batting: 'home'
+    });
+  });
 
   // Next batter: advance an index and set current batter
   function advance(side) {
